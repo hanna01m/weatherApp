@@ -1,1 +1,49 @@
-/*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  color: rgb(98, 82, 82);
+}
+* body {
+  background: linear-gradient(90deg, rgb(163, 230, 156) 0%, rgb(148, 209, 233) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#src-field {
+  width: auto;
+  margin: 1rem;
+}
+#src-field input {
+  height: 1.5rem;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.217);
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section #city {
+  margin-top: 1rem;
+}
+
+button,
+i {
+  background: none;
+  border: none;
+  font-size: 1rem;
+}/*# sourceMappingURL=style.css.map */
