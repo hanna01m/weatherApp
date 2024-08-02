@@ -8,7 +8,8 @@ async function checkWeather() {
   console.log(data);
 
   document.querySelector("#city").innerHTML = data.name;
-  document.querySelector("#temprature").innerHTML = `${data.main.temp}°C`;
+  document.querySelector("#temprature").innerHTML =
+    Math.round(data.main.temp) + "°C";
 
   // add weather icon
   const iconCode = data.weather[0].icon;
@@ -24,14 +25,14 @@ async function checkWeather() {
   description.innerHTML = weatherDescripton;
 
   // add highest / lowest temprature
-  const tempMax = data.main.temp_max;
-  const tempMin = data.main.temp_min;
+  const tempMax = Math.round(data.main.temp_max);
+  const tempMin = Math.round(data.main.temp_min);
 
   const showMax = document.querySelector("#temp-max");
   const showMin = document.querySelector("#temp-min");
 
   showMax.innerHTML = "H:" + tempMax;
-  showMin.innerHTML = "M:" + tempMin;
+  showMin.innerHTML = "L:" + tempMin;
 }
 
 checkWeather();
