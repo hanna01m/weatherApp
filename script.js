@@ -27,7 +27,9 @@ async function checkWeather(city) {
 
   localStorage.setItem("lsCity", city);
 
-  document.querySelector("#city").innerHTML = data.name;
+  document.querySelector("#city").innerHTML =
+    data.name + ", " + data.sys.country;
+
   document.querySelector("#temprature").innerHTML =
     Math.round(data.main.temp) + "°C";
 
@@ -58,7 +60,30 @@ async function checkWeather(city) {
 
   showMax.innerHTML = "H:" + tempMax;
   showMin.innerHTML = "L:" + tempMin;
+
+  //  sunrise and sunset
+  const sunrise = formatTime(data.sys.sunrise * 1000);
+  const sunset = formatTime(data.sys.sunset * 1000);
+
+  document.getElementById("sunrise").innerHTML = "Sunrise: " + sunrise;
+  document.getElementById("sunset").innerHTML = "Sunset: " + sunset;
+
+  document.querySelector("#feels-like").innerHTML =
+    "Feels like: " + data.main.feels_like + "°c";
+
+  document.querySelector("#wind-deg").innerHTML = "Wind deg: " + data.wind.deg;
+  document.querySelector("#wind-speed").innerHTML =
+    "Wind speed: " + data.wind.speed;
 }
+
+function formatTime(timestamp) {
+  return new Date(timestamp).toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  });
+}
+
 //Search for city
 srcBtn.addEventListener("click", () => {
   checkWeather(srcField.value);
@@ -73,6 +98,18 @@ srcField.addEventListener("keypress", () => {
       srcField.value = "";
     }
   }
+});
+
+// more info card
+document.addEventListener("DOMContentLoaded", () => {
+  const infoBtn = document.querySelector(
+    "[data-bs-target='#collapseWidthExample']"
+  );
+  const infoCard = document.querySelector("#collapseWidthExample");
+
+  infoBtn.addEventListener("click", () => {
+    infoCard.classList.toggle("show");
+  });
 });
 
 window.addEventListener("load", () => {
