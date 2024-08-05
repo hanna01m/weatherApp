@@ -30,6 +30,7 @@
       </div>
       <span id="message"></span>
     </header>
+
     <section>
       <h1 id="city"></h1>
       <img id="weather-icon" alt="Weather Icon" />
@@ -41,25 +42,24 @@
 
       <p>
         <button
-          class="btn btn-primary"
+          class="btn btn-light"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#collapseWidthExample"
+          style="display: none"
           aria-expanded="false"
           aria-controls="collapseWidthExample"
-        >
-          Additional information
-        </button>
+        ></button>
       </p>
       <div class="collapse collapse-horizontal" id="collapseWidthExample">
-        <div class="card card-body" style="width: 30vw">
+        <div class="card card-body" id="info-card">
           <span id="info">
             <p id="sunrise"></p>
-            <p id="sunset"></p
-          ></span>
-          <p id="feels-like"></p>
-          <p id="wind-deg"></p>
-          <p id="wind-speed"></p>
+            <p id="sunset"></p>
+            <p id="feels-like"></p>
+            <p id="wind-deg"></p>
+            <p id="wind-speed"></p>
+          </span>
         </div>
       </div>
     </section>

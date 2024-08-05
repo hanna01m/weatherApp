@@ -9,7 +9,7 @@
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   background-color: #f0f8ff;
   color: #333;
 }
@@ -17,8 +17,13 @@ body {
 header {
   width: 100vw;
   background-color: #739eac;
-  padding: 1.5rem;
+  padding: 1rem;
+  padding-top: 2rem;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 #search {
@@ -49,9 +54,9 @@ header {
 }
 
 #message {
-  display: flex;
-  text-align: left;
-  color: #ffffff;
+  text-align: center;
+  margin-top: 1rem;
+  color: white;
   font-weight: 400;
   font-size: 1.1rem;
 }
@@ -89,28 +94,21 @@ section {
 #description {
   font-size: 24px;
   font-weight: 200;
+  text-transform: uppercase;
 }
 
-.btn-primary {
-  background-color: transparent;
+div#info-card {
+  width: 100vw;
+  background-color: #f0f8ff;
 }
 
 .info {
-  background-color: #739eac;
   font-size: 0.5rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   text-align: left;
   padding: 0;
-}
-
-.btn.btn-primary {
-  background-color: #739eac;
-  border: none;
-}
-.btn.btn-primary:hover {
-  background-color: rgba(115, 158, 172, 0.5568627451);
 }
 
 p#sunrise,

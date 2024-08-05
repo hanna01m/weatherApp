@@ -5,7 +5,11 @@ const apiUrl =
 const srcField = document.querySelector("#search input");
 const srcBtn = document.querySelector("#search button");
 const msg = document.querySelector("#message");
-const bodyBackground = document.querySelector("body");
+
+const infoBtn = document.querySelector(
+  "[data-bs-target='#collapseWidthExample']"
+);
+const infoCard = document.querySelector("#collapseWidthExample");
 
 async function checkWeather(city) {
   msg.innerHTML = "";
@@ -24,6 +28,8 @@ async function checkWeather(city) {
   let data = await response.json();
 
   console.log(data);
+
+  infoBtn.style.display = "block";
 
   localStorage.setItem("lsCity", city);
 
@@ -84,6 +90,21 @@ function formatTime(timestamp) {
   });
 }
 
+// more info card
+document.addEventListener("DOMContentLoaded", () => {
+  infoBtn.textContent = "Show detailed Information";
+
+  infoBtn.addEventListener("click", () => {
+    if (infoCard.classList.contains("show")) {
+      infoCard.classList.remove("show");
+      infoBtn.textContent = "Show detailed Information";
+    } else {
+      infoCard.classList.add("show");
+      infoBtn.textContent = "Hide detailed Information";
+    }
+  });
+});
+
 //Search for city
 srcBtn.addEventListener("click", () => {
   checkWeather(srcField.value);
@@ -98,18 +119,6 @@ srcField.addEventListener("keypress", () => {
       srcField.value = "";
     }
   }
-});
-
-// more info card
-document.addEventListener("DOMContentLoaded", () => {
-  const infoBtn = document.querySelector(
-    "[data-bs-target='#collapseWidthExample']"
-  );
-  const infoCard = document.querySelector("#collapseWidthExample");
-
-  infoBtn.addEventListener("click", () => {
-    infoCard.classList.toggle("show");
-  });
 });
 
 window.addEventListener("load", () => {
