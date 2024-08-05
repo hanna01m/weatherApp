@@ -6,56 +6,10 @@ $primary-font: "Poppins", sans-serif;
 $secondary-font: "News Cycle", sans-serif;
 
 * {
-  font-family: $primary-font;
-  font-weight: 300;
   padding: 0;
   margin: 0;
-  color: rgb(98, 82, 82);
-
-  body {
-    background: linear-gradient(
-      90deg,
-      rgba(163, 230, 156, 1) 0%,
-      rgba(148, 209, 233, 1) 100%
-    );
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
 }
 
-#src-field {
-  width: auto;
-  margin: 1rem;
-
-  input {
-    height: 1.5rem;
-    padding: 0.2rem;
-    border-radius: 1rem;
-    border: none;
-  }
-}
-
-section {
-  background: rgba(255, 255, 255, 0.217);
-  margin: 0 auto;
-  padding: 1rem;
-  border-radius: 1rem;
-  width: 30vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  #city {
-    margin-top: 1rem;
-  }
-}
-
-button,
-i {
-  background: none;
-  border: none;
-  font-size: 1rem;
+#weather-icon {
+  display: none;
 }

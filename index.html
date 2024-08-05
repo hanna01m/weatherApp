@@ -14,18 +14,24 @@
     />
   </head>
   <body>
-    <section>
-      <div id="src-field">
+    <header>
+      <div id="search">
         <input type="text" placeholder="Search for a city..." />
-        <button id="src-btn">
-          <i class="fa-solid fa-magnifying-glass"></i>
+        <button>
+          Search
+          <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
         </button>
       </div>
+    </header>
+    <span id="message"></span>
+    <section>
       <h1 id="city"></h1>
       <img id="weather-icon" alt="Weather Icon" />
       <h2 id="temprature"></h2>
-      <span id="temp-max"></span>
-      <span id="temp-min"></span>
+      <div id="min-max">
+        <span id="temp-max"></span> <span id="temp-min"></span>
+      </div>
+
       <p id="description"></p>
     </section>
 
