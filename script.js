@@ -25,23 +25,7 @@ async function checkWeather(city) {
 
   console.log(data);
 
-  switch (data.weather[0].main.toLowerCase()) {
-    case "rain":
-      bodyBackground.style.background = "gray";
-      break;
-    case "clear":
-      bodyBackground.style.background = "yellow";
-      break;
-    case "clouds":
-      bodyBackground.style.background = "lightgray";
-      break;
-    case "snow":
-      bodyBackground.style.background = "white";
-      break;
-    default:
-      bodyBackground.style.background = "none";
-      break;
-  }
+  localStorage.setItem("lsCity", city);
 
   document.querySelector("#city").innerHTML = data.name;
   document.querySelector("#temprature").innerHTML =
@@ -88,5 +72,12 @@ srcField.addEventListener("keypress", () => {
       checkWeather(city);
       srcField.value = "";
     }
+  }
+});
+
+window.addEventListener("load", () => {
+  const lsCity = localStorage.getItem("lsCity");
+  if (lsCity) {
+    checkWeather(lsCity);
   }
 });
