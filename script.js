@@ -6,9 +6,7 @@ const srcField = document.querySelector("#search input");
 const srcBtn = document.querySelector("#search button");
 const msg = document.querySelector("#message");
 
-const infoBtn = document.querySelector(
-  "[data-bs-target='#collapseWidthExample']"
-);
+const infoBtn = document.querySelector("#info-btn");
 const infoCard = document.querySelector("#collapseWidthExample");
 
 async function checkWeather(city) {
@@ -27,7 +25,7 @@ async function checkWeather(city) {
   }
   let data = await response.json();
 
-  console.log(data);
+  // console.log(data);
 
   infoBtn.style.display = "block";
 
@@ -67,7 +65,7 @@ async function checkWeather(city) {
   showMax.innerHTML = "H:" + tempMax;
   showMin.innerHTML = "L:" + tempMin;
 
-  //  sunrise and sunset
+  //  sunrise, sunset, feels like, wind
   const sunrise = formatTime(data.sys.sunrise * 1000);
   const sunset = formatTime(data.sys.sunset * 1000);
 
@@ -75,13 +73,14 @@ async function checkWeather(city) {
   document.getElementById("sunset").innerHTML = "Sunset: " + sunset;
 
   document.querySelector("#feels-like").innerHTML =
-    "Feels like: " + data.main.feels_like + "°c";
+    "Feels like: " + Math.round(data.main.feels_like) + "°c";
 
   document.querySelector("#wind-deg").innerHTML = "Wind deg: " + data.wind.deg;
   document.querySelector("#wind-speed").innerHTML =
     "Wind speed: " + data.wind.speed;
 }
 
+// am / pm
 function formatTime(timestamp) {
   return new Date(timestamp).toLocaleTimeString("en-US", {
     hour: "2-digit",
@@ -90,19 +89,17 @@ function formatTime(timestamp) {
   });
 }
 
-// more info card
-document.addEventListener("DOMContentLoaded", () => {
-  infoBtn.textContent = "Show detailed Information";
+// more info btn
+infoBtn.textContent = "Show detailed Information";
 
-  infoBtn.addEventListener("click", () => {
-    if (infoCard.classList.contains("show")) {
-      infoCard.classList.remove("show");
-      infoBtn.textContent = "Show detailed Information";
-    } else {
-      infoCard.classList.add("show");
-      infoBtn.textContent = "Hide detailed Information";
-    }
-  });
+infoBtn.addEventListener("click", () => {
+  if (infoCard.classList.contains("show")) {
+    infoCard.classList.remove("show");
+    infoBtn.textContent = "Show detailed Information";
+  } else {
+    infoCard.classList.add("show");
+    infoBtn.textContent = "Hide detailed Information";
+  }
 });
 
 //Search for city

@@ -97,6 +97,22 @@ section {
   text-transform: uppercase;
 }
 
+#info-btn {
+  display: block;
+  background: white;
+  border: 1px solid rgba(167, 163, 163, 0.5882352941);
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#info-btn:hover {
+  background-color: #f0f0f0;
+}
+
 div#info-card {
   width: 100vw;
   background-color: #f0f8ff;
@@ -119,4 +135,6 @@ p#wind-speed {
   margin-bottom: 0;
   padding: 0.2rem;
   font-weight: 500;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
